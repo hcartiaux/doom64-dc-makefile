@@ -34,7 +34,7 @@ clone:
 
 build_dc_chain:
 	cd $(TARGET)/kos/utils/dc-chain
-	make
+	make -j $(nproc)
 	make all
 	make clean
 
@@ -44,4 +44,4 @@ build_kos:
 	sed -i '/136/s/-O2/-O3 -flto=auto/g' environ.sh
 	sed -i '/184/s/^#//g' environ.sh
 	source $(TARGET)/kos/environ.sh
-	make
+	make -j $(nproc)
