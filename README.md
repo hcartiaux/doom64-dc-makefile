@@ -24,7 +24,22 @@ You must obtain these files by your own means and place them in the directory `0
 
 ## Build
 
-So far, this has been tested as root in an [Ubuntu 24.04 Docker container](https://hub.docker.com/_/ubuntu/).
+So far, this has been tested as root in an [Ubuntu 24.04 Docker container](https://hub.docker.com/_/ubuntu/):
+
+```
+# Clone this repository
+git clone https://github.com/hcartiaux/doom64-dc-makefile.git
+# Place the files doom64.z64 and doom64.wad in doom64-dc-makefile/00_game_files
+# Run the build process in a docker container
+docker run --name doom64-dc-build -v $(pwd)/doom64-dc-makefile/:/mnt/ -dt ubuntu:latest
+docker exec -it doom64-dc-build /bin/bash -c "cd /mnt ; make"
+# Clean-up
+docker stop doom64-dc-build
+docker rm doom64-dc-build
+docker image rm ubuntu:latest
+```
+
+The Makefiles are also usable outside of a container:
 
 ```
 git clone https://github.com/hcartiaux/doom64-dc-makefile.git
