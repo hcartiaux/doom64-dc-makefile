@@ -16,7 +16,7 @@ TARGETS = $(DIRS)
 ###############
 all: $(TARGETS)
 
-info:
+list:
 	@echo "DIRS           = $(DIRS)"
 	@echo "TARGETS        = $(TARGETS)"
 

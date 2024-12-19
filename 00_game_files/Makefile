@@ -14,6 +14,8 @@ CUR_DIR = $(shell cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 ###############
 all: check
 
+info:
+
 check:
 	md5sum -c "$(CUR_DIR)/doom64.md5sums"
 
