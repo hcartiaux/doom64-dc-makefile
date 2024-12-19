@@ -28,7 +28,7 @@ clone:
 	mkdir -p $(TARGET)
 	chmod -R 755 $(TARGET)
 	chown -R $(id -u):$(id -g) $(TARGET)
-	git clone $(GIT_URL) $(TARGET)/kos
+	git clone $(GIT_URL) $(TARGET)
 
 build:
 	cd $(TARGET)
