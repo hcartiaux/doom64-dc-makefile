@@ -32,6 +32,7 @@ git clone https://github.com/hcartiaux/doom64-dc-makefile.git
 # Place the files doom64.z64 and doom64.wad in doom64-dc-makefile/00_game_files
 # Run the build process in a docker container
 docker run --name doom64-dc-build -v $(pwd)/doom64-dc-makefile/:/mnt/ -dt ubuntu:latest
+docker exec -it doom64-dc-build /bin/bash -c "apt-get update ; apt-get install -y make"
 docker exec -it doom64-dc-build /bin/bash -c "cd /mnt ; make"
 # Clean-up
 docker stop doom64-dc-build
