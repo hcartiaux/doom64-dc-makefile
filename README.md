@@ -2,7 +2,7 @@
 
 This is a set of Makefile to build [Doom64-dc](https://github.com/jnmartin84/doom64-dc) and generate a bootable `.cdi` image file that can be burnt on a regular CD-R.
 
-![Doom64](https://github.com/hcartiaux/doom64-dc-makefile/blob/doom64.png?raw=true)
+![Doom64](https://github.com/hcartiaux/doom64-dc-makefile/blob/main/doom64.png?raw=true)
 
 ## Game files
 
