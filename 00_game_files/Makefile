@@ -10,6 +10,7 @@ CUR_DIR = $(shell cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 .ONESHELL:
 .SHELLFLAGS += -e
+.PHONY: all info check
 
 ###############
 all: check

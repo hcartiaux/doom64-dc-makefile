@@ -9,7 +9,7 @@ TARGET = "/root/doom64-dc"
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: clone link build
+.PHONY: all info clone link build
 
 ###############
 all: clone link build

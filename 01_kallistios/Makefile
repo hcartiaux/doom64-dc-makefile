@@ -9,7 +9,7 @@ GIT_URL = "https://github.com/KallistiOS/KallistiOS.git"
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: deps clone build_dc_chain build_kos
+.PHONY: all info deps clone build_dc_chain build_kos
 
 ###############
 all: deps clone build_dc_chain build_kos

@@ -10,7 +10,7 @@ INSTALL_LOCATION = "/usr/local/bin/"
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: deps clone build install
+.PHONY: all info deps clone build install
 
 ###############
 all: deps clone build install
