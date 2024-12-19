@@ -20,7 +20,7 @@ info:
 	@echo "TARGET         = $(TARGET)"
 
 deps:
-	apt-get install -y $(DEPENDENCIES)
+	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $(DEPENDENCIES)
 
 clone:
 	mkdir -p $(TARGET)

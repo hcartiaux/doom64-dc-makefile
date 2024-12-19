@@ -22,7 +22,7 @@ info:
 	@echo "INSTALL_LOCATION = $(INSTALL_LOCATION)"
 
 deps:
-	apt-get install -y $(DEPENDENCIES)
+	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $(DEPENDENCIES)
 
 clone:
 	mkdir -p $(TARGET)
