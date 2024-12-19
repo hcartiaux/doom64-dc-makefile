@@ -35,7 +35,7 @@ clone:
 build_dc_chain:
 	cd $(TARGET)/kos/utils/dc-chain
 	make -j $(shell nproc)
-	make all
+	make -j $(shell nproc) all
 	make clean
 
 build_kos:
