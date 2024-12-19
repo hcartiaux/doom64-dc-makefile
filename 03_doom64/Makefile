@@ -32,5 +32,5 @@ link:
 
 build:
 	cd $(TARGET)
-	make -j $(nproc)
+	make -j $(shell nproc)
 	make cdi

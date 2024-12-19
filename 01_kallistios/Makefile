@@ -25,7 +25,7 @@ deps:
 clone:
 	mkdir -p $(TARGET)
 	chmod -R 755 $(TARGET)
-	chown -R $(id -u):$(id -g) $(TARGET)
+	chown -R $(shell id -u):$(shell id -g) $(TARGET)
 	git clone $(GIT_URL) $(TARGET)/kos
 	cd $(TARGET)/kos
 	git checkout 829d092
@@ -34,7 +34,7 @@ clone:
 
 build_dc_chain:
 	cd $(TARGET)/kos/utils/dc-chain
-	make -j $(nproc)
+	make -j $(shell nproc)
 	make all
 	make clean
 
@@ -44,4 +44,4 @@ build_kos:
 	sed -i '/136/s/-O2/-O3 -flto=auto/g' environ.sh
 	sed -i '/184/s/^#//g' environ.sh
 	source $(TARGET)/kos/environ.sh
-	make -j $(nproc)
+	make -j $(shell nproc)
