@@ -6,7 +6,7 @@ This is a set of Makefiles to build [Doom64-dc](https://github.com/jnmartin84/do
 
 ## Game files
 
-You must obtain these files by your own mean and place them in the directory `00_game_files`
+You must obtain these files by your own means and place them in the directory `00_game_files`.
 
 | File name    | md5sum                             | Description                                                                                                                                                                       |
 |--------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
