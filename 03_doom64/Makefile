@@ -38,7 +38,7 @@ build:
 	cp "$(TARGET)/doom64.cdi" "$(CURDIR)/.."
 
 print:
-	echo "==============================================="
-	echo "/!\ Doom64 .cdi file generated at location:"
-	echo "  $(shell dirname -- $(CURDIR))/doom64.cdi"
-	echo "==============================================="
+	@echo "==============================================="
+	@echo "/!\ Doom64 .cdi file generated at location:"
+	@echo "  $(shell dirname -- $(CURDIR))/doom64.cdi"
+	@echo "==============================================="
