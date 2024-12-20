@@ -48,3 +48,9 @@ cd doom64-dc-makefile
 make
 ```
 
+Finally, you can remove all the files created previously using the clean step (note that it will not uninstall packages and will not remove your `.cdi` file):
+
+```
+make clean
+```
+
