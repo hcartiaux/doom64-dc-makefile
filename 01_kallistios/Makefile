@@ -23,11 +23,11 @@ deps:
 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $(DEPENDENCIES)
 
 clone:
-	mkdir -p $(TARGET)
-	chmod -R 755 $(TARGET)
-	chown -R $(shell id -u):$(shell id -g) $(TARGET)
-	git clone $(GIT_URL) $(TARGET)/kos
-	cd $(TARGET)/kos
+	mkdir -p "$(TARGET)"
+	chmod -R 755 "$(TARGET)"
+	chown -R $(shell id -u):$(shell id -g) "$(TARGET)"
+	git clone "$(GIT_URL)" "$(TARGET)/kos"
+	cd "$(TARGET)/kos"
 	git checkout 829d092
 	git fetch origin pull/838/head:soundfix
 	git fetch origin pull/872/head:posixify
@@ -35,7 +35,7 @@ clone:
 	git merge posixify --no-commit
 
 build_dc_chain:
-	cd $(TARGET)/kos/utils/dc-chain
+	cd "$(TARGET)/kos/utils/dc-chain"
 	make -j $(shell nproc)
 	make -j $(shell nproc) all
 	make clean

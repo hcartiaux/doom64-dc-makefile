@@ -20,22 +20,22 @@ info:
 	@echo "TARGET  = $(TARGET)"
 
 clone:
-	mkdir -p $(TARGET)
-	chmod -R 755 $(TARGET)
-	chown -R $(id -u):$(id -g) $(TARGET)
-	git clone $(GIT_URL) $(TARGET)
+	mkdir -p "$(TARGET)"
+	chmod -R 755 "$(TARGET)"
+	chown -R $(id -u):$(id -g) "$(TARGET)"
+	git clone "$(GIT_URL)" "$(TARGET)"
 
 link:
-	cd $(TARGET)
-	ln -s $(CURDIR)/../00_game_files/doom64.wad wadtool/
-	ln -s $(CURDIR)/../00_game_files/doom64.z64 wadtool/
+	cd "$(TARGET)"
+	ln -s "$(CURDIR)/../00_game_files/doom64.wad" wadtool/
+	ln -s "$(CURDIR)/../00_game_files/doom64.z64" wadtool/
 
 build:
 	. "$(TOOLCHAINS)/kos/environ.sh"
-	cd $(TARGET)
+	cd "$(TARGET)"
 	make -j $(shell nproc)
 	make cdi
-	cp $(TARGET)/doom64.cdi $(CURDIR)/..
+	cp "$(TARGET)/doom64.cdi" "$(CURDIR)/.."
 
 print:
 	echo "==============================================="

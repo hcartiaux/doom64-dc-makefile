@@ -25,15 +25,15 @@ deps:
 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $(DEPENDENCIES)
 
 clone:
-	mkdir -p $(TARGET)
-	chmod -R 755 $(TARGET)
-	chown -R $(id -u):$(id -g) $(TARGET)
-	git clone $(GIT_URL) $(TARGET)
+	mkdir -p "$(TARGET)"
+	chmod -R 755 "$(TARGET)"
+	chown -R $(id -u):$(id -g) "$(TARGET)"
+	git clone $(GIT_URL) "$(TARGET)"
 
 build:
-	cd $(TARGET)
+	cd "$(TARGET)"
 	meson setup builddir
 	meson compile -C builddir
 
 install:
-	cp $(TARGET)/builddir/mkdcdisc $(INSTALL_LOCATION)
+	cp "$(TARGET)/builddir/mkdcdisc" "$(INSTALL_LOCATION)"
