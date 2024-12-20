@@ -3,9 +3,9 @@
 # Time-stamp: <Thu 2024-12-19 17:22:51 hcartiaux>
 #
 ############################## Variables Declarations ############################
-DEPENDENCIES = git meson build-essential pkg-config libisofs-dev
-GIT_URL = "https://gitlab.com/simulant/mkdcdisc"
-TARGET = "/root/mkdcdisc"
+DEPENDENCIES     = git meson build-essential pkg-config libisofs-dev
+GIT_URL          = "https://gitlab.com/simulant/mkdcdisc"
+TARGET           = "/root/mkdcdisc"
 INSTALL_LOCATION = "/usr/local/bin/"
 
 .ONESHELL:
