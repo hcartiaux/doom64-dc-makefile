@@ -12,7 +12,7 @@ TOOLCHAINS = "/opt/toolchains/dc"
 .PHONY: all info clone link build print clean
 
 ###############
-all: clone link build
+all: clone link build print
 
 info:
 	@echo "CURDIR  = $(CURDIR)"
