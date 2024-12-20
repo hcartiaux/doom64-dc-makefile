@@ -10,7 +10,7 @@ INSTALL_LOCATION = "/usr/local/bin/"
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info deps clone build install
+.PHONY: all info deps clone build install clean
 
 ###############
 all: deps clone build install
@@ -37,3 +37,7 @@ build:
 
 install:
 	cp "$(TARGET)/builddir/mkdcdisc" "$(INSTALL_LOCATION)"
+
+clean:
+	rm -rf "$(TARGET)"
+	rm -f  "$(INSTALL_LOCATION)/mkdcdisc"

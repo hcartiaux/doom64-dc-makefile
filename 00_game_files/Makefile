@@ -8,7 +8,7 @@
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info check
+.PHONY: all info check clean
 
 ###############
 all: check
@@ -18,3 +18,4 @@ info:
 check:
 	md5sum -c "$(CURDIR)/doom64.md5sums"
 
+clean:

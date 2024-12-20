@@ -9,7 +9,7 @@ GIT_URL      = https://github.com/KallistiOS/KallistiOS.git
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info deps clone build_dc_chain build_kos
+.PHONY: all info deps clone build_dc_chain build_kos clean
 
 ###############
 all: deps clone build_dc_chain build_kos
@@ -51,3 +51,6 @@ build_kos:
 	. "$(TARGET)/kos/environ.sh"
 	# Build
 	make -j $(shell nproc)
+
+clean:
+	rm -rf "$(TARGET)/kos"

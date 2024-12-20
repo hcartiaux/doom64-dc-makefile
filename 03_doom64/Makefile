@@ -9,7 +9,7 @@ TOOLCHAINS = "/opt/toolchains/dc"
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info clone link build print
+.PHONY: all info clone link build print clean
 
 ###############
 all: clone link build
@@ -42,3 +42,6 @@ print:
 	@echo "/!\ Doom64 .cdi file generated at location:"
 	@echo "  $(shell dirname -- $(CURDIR))/doom64.cdi"
 	@echo "==============================================="
+
+clean:
+	rm -rf "$(TARGET)"
