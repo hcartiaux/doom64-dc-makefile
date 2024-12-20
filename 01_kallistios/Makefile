@@ -28,7 +28,6 @@ clone:
 	chown -R $(shell id -u):$(shell id -g) $(TARGET)
 	git clone $(GIT_URL) $(TARGET)/kos
 	cd $(TARGET)/kos
-	git config --global user.email "hyacinthe.cartiaux@gmail.com"
 	git checkout 829d092
 	git fetch origin pull/838/head:soundfix
 	git fetch origin pull/872/head:posixify
