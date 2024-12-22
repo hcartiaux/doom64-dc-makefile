@@ -24,6 +24,8 @@ You must obtain these files by your own means and place them in the directory `0
 
 ## Build
 
+### As root, in a Ubuntu 24.04 docker container
+
 So far, this has been tested as root in an [Ubuntu 24.04 Docker container](https://hub.docker.com/_/ubuntu/):
 
 ```
@@ -40,12 +42,23 @@ docker rm doom64-dc-build
 docker image rm ubuntu:latest
 ```
 
+### As a user, on an Ubuntu 24.04 system
+
 The Makefiles are also usable outside of a container:
 
 ```
 git clone https://github.com/hcartiaux/doom64-dc-makefile.git
 cd doom64-dc-makefile
 make
+```
+
+If it succeeds, the path of the new file `doom64.cdi` will be printed.
+
+```
+===============================================
+/!\ Doom64 .cdi file generated at location:
+  /home/.../doom64-dc-makefile/doom64.cdi
+===============================================
 ```
 
 Finally, you can remove all the files created previously using the clean step (note that it will not uninstall packages and will not remove your `.cdi` file):
