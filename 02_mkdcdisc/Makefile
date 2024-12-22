@@ -5,12 +5,18 @@
 ############################## Variables Declarations ############################
 DEPENDENCIES     = git meson build-essential pkg-config libisofs-dev
 GIT_URL          = "https://gitlab.com/simulant/mkdcdisc"
-TARGET           = "/root/mkdcdisc"
+TARGET           = "/tmp/mkdcdisc"
 INSTALL_LOCATION = "/usr/local/bin/"
 
 .ONESHELL:
 .SHELLFLAGS += -e
 .PHONY: all info deps clone build install clean
+
+user  = $(shell id -u)
+group = $(shell id -g)
+ifneq ($(user), root)
+    SUDO = "sudo"
+endif
 
 ###############
 all: deps clone build install
@@ -22,12 +28,12 @@ info:
 	@echo "INSTALL_LOCATION = $(INSTALL_LOCATION)"
 
 deps:
-	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $(DEPENDENCIES)
+	DEBIAN_FRONTEND=noninteractive $(SUDO) apt-get install -y --no-install-recommends $(DEPENDENCIES)
 
 clone:
 	mkdir -p "$(TARGET)"
 	chmod -R 755 "$(TARGET)"
-	chown -R $(id -u):$(id -g) "$(TARGET)"
+	chown -R $(user):$(group) "$(TARGET)"
 	git clone $(GIT_URL) "$(TARGET)"
 
 build:
@@ -36,8 +42,8 @@ build:
 	meson compile -C builddir
 
 install:
-	cp "$(TARGET)/builddir/mkdcdisc" "$(INSTALL_LOCATION)"
+	$(SUDO) cp "$(TARGET)/builddir/mkdcdisc" "$(INSTALL_LOCATION)"
 
 clean:
 	rm -rf "$(TARGET)"
-	rm -f  "$(INSTALL_LOCATION)/mkdcdisc"
+	$(SUDO) rm -f  "$(INSTALL_LOCATION)/mkdcdisc"

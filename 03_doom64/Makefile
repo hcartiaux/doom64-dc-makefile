@@ -4,12 +4,15 @@
 #
 ############################## Variables Declarations ############################
 GIT_URL    = "https://github.com/jnmartin84/doom64-dc"
-TARGET     = "/root/doom64-dc"
+TARGET     = "/tmp/doom64-dc"
 TOOLCHAINS = "/opt/toolchains/dc"
 
 .ONESHELL:
 .SHELLFLAGS += -e
 .PHONY: all info clone link build print clean
+
+user  = $(shell id -u)
+group = $(shell id -g)
 
 ###############
 all: clone link build print
@@ -22,7 +25,7 @@ info:
 clone:
 	mkdir -p "$(TARGET)"
 	chmod -R 755 "$(TARGET)"
-	chown -R $(id -u):$(id -g) "$(TARGET)"
+	chown -R $(user):$(group) "$(TARGET)"
 	git clone "$(GIT_URL)" "$(TARGET)"
 
 link:

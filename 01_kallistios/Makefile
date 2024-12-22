@@ -11,6 +11,12 @@ GIT_URL      = https://github.com/KallistiOS/KallistiOS.git
 .SHELLFLAGS += -e
 .PHONY: all info deps clone build_dc_chain build_kos clean
 
+user  = $(shell id -u)
+group = $(shell id -g)
+ifneq ($(user), root)
+	SUDO = "sudo"
+endif
+
 ###############
 all: deps clone build_dc_chain build_kos
 
@@ -20,14 +26,16 @@ info:
 	@echo "TARGET         = $(TARGET)"
 
 deps:
-	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $(DEPENDENCIES)
+	DEBIAN_FRONTEND=noninteractive $(SUDO) apt-get update
+	DEBIAN_FRONTEND=noninteractive $(SUDO) apt-get install -y --no-install-recommends $(DEPENDENCIES)
 
 clone:
-	mkdir -p "$(TARGET)"
-	chmod -R 755 "$(TARGET)"
-	chown -R $(shell id -u):$(shell id -g) "$(TARGET)"
+	$(SUDO) mkdir -p "$(TARGET)"
+	$(SUDO) chmod -R 755 "$(TARGET)"
+	$(SUDO) chown -R $(user):$(group) "$(TARGET)"
 	git clone "$(GIT_URL)" "$(TARGET)/kos"
 	cd "$(TARGET)/kos"
+	git config --global user.name  "Hyacinthe Cartiaux"
 	git config --global user.email "hyacinthe.cartiaux@gmail.com"
 	git checkout 829d092
 	git fetch origin pull/838/head:soundfix
@@ -53,4 +61,4 @@ build_kos:
 	make -j $(shell nproc)
 
 clean:
-	rm -rf "$(TARGET)/kos"
+	$(SUDO) rm -rf "$(TARGET)"
