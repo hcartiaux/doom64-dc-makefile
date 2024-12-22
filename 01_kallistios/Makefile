@@ -13,7 +13,7 @@ GIT_URL      = https://github.com/KallistiOS/KallistiOS.git
 
 user  = $(shell id -u)
 group = $(shell id -g)
-ifneq ($(user), root)
+ifneq ($(user), 0)
 	SUDO = "sudo"
 endif
 
