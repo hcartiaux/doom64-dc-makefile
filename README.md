@@ -24,7 +24,17 @@ You must obtain these files by your own means and place them in the directory `0
 
 ## Build
 
-### As root, in a Ubuntu 24.04 docker container
+## Automagically, using the Dockerfile
+
+```
+git clone https://github.com/hcartiaux/doom64-dc-makefile.git
+cd doom64-dc-makefile
+docker build -t doom64-dc .
+# Place the files doom64.z64 and doom64.wad in the current directory before executing the next command
+docker run -v $(pwd):/mnt/ doom64-dc
+```
+
+### Manually, inside an Ubuntu 24.04 Docker container as root
 
 So far, this has been tested as root in an [Ubuntu 24.04 Docker container](https://hub.docker.com/_/ubuntu/):
 
@@ -42,7 +52,7 @@ docker rm doom64-dc-build
 docker image rm ubuntu:latest
 ```
 
-### As a user, on an Ubuntu 24.04 system
+### On an Ubuntu 24.04 system as a regular user
 
 The Makefiles are also usable outside of a container:
 
