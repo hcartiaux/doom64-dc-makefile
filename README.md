@@ -1,6 +1,6 @@
 # Doom 64 for Dreamcast Makefiles
 
-This is a set of Makefiles to build [Doom64-dc](https://github.com/jnmartin84/doom64-dc) and generate a bootable `.cdi` image file that can be burnt on a regular CD-R.
+This is a set of Makefiles to build [Doom64-dc](https://github.com/jnmartin84/doom64-dc) and generate a bootable `.cdi` image file that can be [burnt on a regular CD-R](https://github.com/alex-free/dreamcast-cdi-burner).
 
 It works in several steps:
 
