@@ -24,7 +24,7 @@ You must obtain these files by your own means and place them in the directory `0
 
 ## Build
 
-## Automagically, using the Dockerfile
+### Automagically, using the Dockerfile
 
 ```
 git clone https://github.com/hcartiaux/doom64-dc-makefile.git
@@ -32,6 +32,13 @@ cd doom64-dc-makefile
 docker build -t doom64-dc .
 # Place the files doom64.z64 and doom64.wad in the current directory before executing the next command
 docker run -v $(pwd):/mnt/ doom64-dc
+```
+
+### Using the pre-built Docker image
+
+```
+# Place the files doom64.z64 and doom64.wad in the current directory before executing the next command
+docker run -v $(pwd):/mnt/ farmerbb/doom64-dc-makefile
 ```
 
 ### Manually, inside an Ubuntu 24.04 Docker container as root
@@ -53,6 +60,9 @@ docker image rm ubuntu:latest
 ```
 
 ### On an Ubuntu 24.04 system as a regular user
+
+**Do not follow the following instructions if you already have a KallistiOS environment set-up on your system,
+it is very likely that it will get corrupted and/or removed.**
 
 The Makefiles are also usable outside of a container:
 
