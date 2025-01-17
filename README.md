@@ -5,7 +5,7 @@ This is a set of Makefiles to build [Doom64-dc](https://github.com/jnmartin84/do
 It works in several steps:
 
 0. Verify the game files integrity
-1. Build the [kallistios](https://dreamcast.wiki/Getting_Started_with_Dreamcast_development) environment and toolchain
+1. Build the [KallistiOS](https://dreamcast.wiki/Getting_Started_with_Dreamcast_development) environment and toolchain
 2. Build [mkdcdisc](https://gitlab.com/simulant/mkdcdisc), mandatory to generate `.cdi` images
 3. Finally, build Doom64
 
@@ -36,9 +36,11 @@ docker run -v $(pwd):/mnt/ doom64-dc
 
 ### Using the pre-built Docker image
 
+This will save you 1 hour of compilation, but the Docker image may not contain the latest KallistiOS environment.
+
 ```
 # Place the files doom64.z64 and doom64.wad in the current directory before executing the next command
-docker run -v $(pwd):/mnt/ farmerbb/doom64-dc-makefile
+docker run -v $(pwd):/mnt/ hcartiaux/doom64-dc-makefile
 ```
 
 ### Manually, inside an Ubuntu 24.04 Docker container as root
