@@ -81,11 +81,6 @@ build_dc_chain:
 
 build_kos:
 	cd "$(TARGET)/kos"
-	# Import https://github.com/KallistiOS/KallistiOS/pull/872
-	rm -f environ_base.sh
-	wget https://raw.githubusercontent.com/KallistiOS/KallistiOS/0fe965953efcf412c00dc6e8d7289de921f7b993/environ_base.sh
-	rm -f environ_dreamcast.sh
-	wget https://raw.githubusercontent.com/KallistiOS/KallistiOS/0fe965953efcf412c00dc6e8d7289de921f7b993/environ_dreamcast.sh
 	# Source environment
 	. "$(TARGET)/kos/environ.sh"
 	# Build
