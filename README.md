@@ -26,6 +26,8 @@ You must obtain these files by your own means and place them in the directory `0
 
 ### Automagically, using the Dockerfile
 
+Thanks to [Braden Farmer](https://github.com/farmerbb) for [this contribution](https://github.com/hcartiaux/doom64-dc-makefile/pull/1).
+
 ```
 git clone https://github.com/hcartiaux/doom64-dc-makefile.git
 cd doom64-dc-makefile
