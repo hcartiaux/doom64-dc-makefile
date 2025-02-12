@@ -10,7 +10,7 @@ INSTALL_LOCATION = "/usr/local/bin/"
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info deps clone build install clean
+.PHONY: all info deps clone build install uninstall
 
 user  = $(shell id -u)
 group = $(shell id -g)
@@ -44,6 +44,6 @@ build:
 install:
 	$(SUDO) cp "$(TARGET)/builddir/mkdcdisc" "$(INSTALL_LOCATION)"
 
-clean:
+uninstall:
 	rm -rf "$(TARGET)"
 	$(SUDO) rm -f  "$(INSTALL_LOCATION)/mkdcdisc"

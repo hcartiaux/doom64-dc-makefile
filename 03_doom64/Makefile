@@ -9,7 +9,7 @@ TOOLCHAINS = "/opt/toolchains/dc"
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info clone link build print clean
+.PHONY: all info clone link build print uninstall
 
 user  = $(shell id -u)
 group = $(shell id -g)
@@ -46,5 +46,5 @@ print:
 	@echo "  $(shell dirname -- $(CURDIR))/doom64.cdi"
 	@echo "==============================================="
 
-clean:
+uninstall:
 	rm -rf "$(TARGET)"

@@ -8,7 +8,7 @@
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info check clean
+.PHONY: all info check uninstall
 
 ###############
 all: check
@@ -18,4 +18,4 @@ info:
 check:
 	md5sum -c "$(CURDIR)/doom64.md5sums"
 
-clean:
+uninstall:

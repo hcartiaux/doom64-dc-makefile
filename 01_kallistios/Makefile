@@ -10,7 +10,7 @@ HTTPS_URL    = https://github.com/jnmartin84/doom64-dc/raw/refs/heads/main/doom6
 
 .ONESHELL:
 .SHELLFLAGS += -e
-.PHONY: all info deps clone build_dc_chain build_kos clean
+.PHONY: all info deps clone build_dc_chain build_kos uninstall
 
 user  = $(shell id -u)
 group = $(shell id -g)
@@ -87,5 +87,5 @@ build_kos:
 	make -j $(shell nproc)
 
 
-clean:
+uninstall:
 	$(SUDO) rm -rf "$(TARGET)"
