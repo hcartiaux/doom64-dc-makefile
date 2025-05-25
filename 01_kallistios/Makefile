@@ -5,8 +5,7 @@
 ############################## Variables Declarations ############################
 DEPENDENCIES = gawk patch bzip2 tar make libgmp-dev libmpfr-dev libmpc-dev gettext wget libelf-dev texinfo bison flex sed git build-essential diffutils curl libjpeg-dev libpng-dev python3 pkg-config cmake libisofs-dev meson ninja-build rake
 TARGET       = /opt/toolchains/dc
-# GIT_URL    = https://github.com/KallistiOS/KallistiOS.git
-HTTPS_URL    = https://github.com/jnmartin84/doom64-dc/raw/refs/heads/main/doom64_kos.tgz
+GIT_URL    = https://github.com/KallistiOS/KallistiOS.git
 
 .ONESHELL:
 .SHELLFLAGS += -e
