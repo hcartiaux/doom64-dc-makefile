@@ -32,7 +32,7 @@ deps:
 
 # Build Upstream KallistiOS from git sources
 clone:
-        $(SUDO) mkdir -p "$(TARGET)"
+	$(SUDO) mkdir -p "$(TARGET)"
 	$(SUDO) chmod -R 755 "$(TARGET)"
  	$(SUDO) chown -R $(user):$(group) "$(TARGET)"
  	git clone "$(GIT_URL)" "$(TARGET)/kos"
@@ -42,8 +42,8 @@ clone:
 build_dc_chain:
 	cd "$(TARGET)/kos/utils/dc-chain"
 	make -j $(shell nproc)
- 	make -j $(shell nproc) all
- 	make clean
+	make -j $(shell nproc) all
+	make clean
 
 build_kos:
  	cd "$(TARGET)/kos"
