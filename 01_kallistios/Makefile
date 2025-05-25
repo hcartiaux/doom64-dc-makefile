@@ -34,7 +34,7 @@ clone:
 	$(SUDO) mkdir -p "$(TARGET)"
 	$(SUDO) chmod -R 755 "$(TARGET)"
  	$(SUDO) chown -R $(user):$(group) "$(TARGET)"
- 	git clone "$(GIT_URL)" "$(TARGET)/kos"
+	git clone "$(GIT_URL)" "$(TARGET)/kos"
 	cd "$(TARGET)/kos"
 	git checkout 2762cef
 
