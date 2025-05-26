@@ -1,6 +1,6 @@
 ##################################################################################
 # Makefile - Build the KallistiOS toolchain
-# Time-stamp: <Wed 2025-05-25 22:46:01 hcartiaux>
+# Time-stamp: <Mon 2025-05-26 09:20:55 hcartiaux>
 #
 ############################## Variables Declarations ############################
 DEPENDENCIES = gawk patch bzip2 tar make libgmp-dev libmpfr-dev libmpc-dev gettext wget libelf-dev texinfo bison flex sed git build-essential diffutils curl libjpeg-dev libpng-dev python3 pkg-config cmake libisofs-dev meson ninja-build rake
@@ -33,7 +33,7 @@ deps:
 clone:
 	$(SUDO) mkdir -p "$(TARGET)"
 	$(SUDO) chmod -R 755 "$(TARGET)"
- 	$(SUDO) chown -R $(user):$(group) "$(TARGET)"
+	$(SUDO) chown -R $(user):$(group) "$(TARGET)"
 	git clone "$(GIT_URL)" "$(TARGET)/kos"
 	cd "$(TARGET)/kos"
 	git checkout 2762cef
@@ -45,15 +45,15 @@ build_dc_chain:
 	make clean
 
 build_kos:
- 	cd "$(TARGET)/kos"
- 	# Creating the doom64 environment file
- 	cp doc/environ.sh.sample environ.sh
-# 	sed -i '/136/s/-O2/-O3 -flto=auto/g' environ.sh
-# 	sed -i '/184/s/^#//g' environ.sh
- 	# Source environment
- 	. "$(TARGET)/kos/environ.sh"
- 	# Build
- 	make -j $(shell nproc)
+	cd "$(TARGET)/kos"
+	# Creating the doom64 environment file
+	cp doc/environ.sh.sample environ.sh
+	# sed -i '/136/s/-O2/-O3 -flto=auto/g' environ.sh
+	# sed -i '/184/s/^#//g' environ.sh
+	# Source environment
+	. "$(TARGET)/kos/environ.sh"
+	# Build
+	make -j $(shell nproc)
 
 uninstall:
 	$(SUDO) rm -rf "$(TARGET)"
