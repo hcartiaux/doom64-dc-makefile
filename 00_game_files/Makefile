@@ -2,8 +2,6 @@
 # Makefile - Configuration file for GNU make (http://www.gnu.org/software/make/)
 # Time-stamp: <Fri 2024-12-20 11:24:32 hcartiaux>
 #
-# Copyright (c) 2024 Sebastien Varrette <Hyacinthe.Cartiaux@gmail.com>
-#
 ############################## Variables Declarations ############################
 
 .ONESHELL:
