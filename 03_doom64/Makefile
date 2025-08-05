@@ -34,8 +34,8 @@ link:
 	ln -s "$(CURDIR)/../00_game_files/doom64.z64" wadtool/
 
 build:
-	. "$(TOOLCHAINS)/kos/environ.sh"
 	cd "$(TARGET)"
+	. environ.sh
 	make -j $(shell nproc)
 	make cdi
 	cp "$(TARGET)/doom64.cdi" "$(CURDIR)/.."

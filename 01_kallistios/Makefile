@@ -48,8 +48,6 @@ build_kos:
 	cd "$(TARGET)/kos"
 	# Creating the doom64 environment file
 	cp doc/environ.sh.sample environ.sh
-	# sed -i '/136/s/-O2/-O3 -flto=auto/g' environ.sh
-	# sed -i '/184/s/^#//g' environ.sh
 	# Source environment
 	. "$(TARGET)/kos/environ.sh"
 	# Build
