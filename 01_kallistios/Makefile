@@ -36,7 +36,7 @@ clone:
 	$(SUDO) chown -R $(user):$(group) "$(TARGET)"
 	git clone "$(GIT_URL)" "$(TARGET)/kos"
 	cd "$(TARGET)/kos"
-	git checkout 2762cef
+	git checkout v2.2.0
 
 build_dc_chain:
 	cd "$(TARGET)/kos/utils/dc-chain"
