@@ -35,7 +35,7 @@ link:
 
 build:
 	cd "$(TARGET)"
-	. environ.sh
+	. "$(TARGET)/environ.sh"
 	make -j $(shell nproc)
 	make cdi
 	cp "$(TARGET)/doom64.cdi" "$(CURDIR)/.."
